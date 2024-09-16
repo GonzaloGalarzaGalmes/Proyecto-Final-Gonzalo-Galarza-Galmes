@@ -1,0 +1,24 @@
+{% extends 'appproject/padre.html' %}
+
+{% block ContenidoQueCambia %}
+  <h1>Perfil de Usuario</h1>
+  
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar cambios</button>
+  </form>
+
+  <a href="{% url 'logout' %}">Cerrar sesión</a>
+
+  <h2>Información del Usuario</h2>
+  <p><strong>Nombre de usuario:</strong> {{ user.username }}</p>
+  <p><strong>Correo electrónico:</strong> {{ user.email }}</p>
+  
+  {% if user_profile.profile_picture %}
+    <p><strong>Foto de perfil:</strong></p>
+    <img src="{{ user_profile.profile_picture.url }}" alt="Foto de perfil" style="max-width: 200px;">
+  {% endif %}
+
+  <p><strong>Biografía:</strong> {{ user_profile.bio }}</p>
+{% endblock %}

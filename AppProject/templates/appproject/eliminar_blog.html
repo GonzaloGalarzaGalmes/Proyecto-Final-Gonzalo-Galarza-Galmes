@@ -1,0 +1,15 @@
+{% extends 'appproject/padre.html' %}
+
+{% block title %}Eliminar Blog{% endblock %}
+
+{% block ContenidoQueCambia %}
+    <div class="container">
+        <h2>Eliminar Blog</h2>
+        <p>¿Estás seguro de que quieres eliminar el blog "{{ blog.titulo }}"?</p>
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+            <a href="{% url 'lista_blogs' %}" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+{% endblock %}

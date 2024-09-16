@@ -1,0 +1,38 @@
+{% extends 'AppProject/padre.html' %}
+
+{% load static %}
+
+{% block title %}
+About us - Mi Sitio
+{% endblock %}
+
+{% block ContenidoQueCambia %}
+<section class="page-section" id="about">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">¿Quién soy?</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <p>Soy un gran fanático del rock en todas sus variantes, desde el heavy metal,
+                   el nu metal hasta el punk y el rock progresivo, como por ejemplo Black Sabbath, Slipknot, 
+                   SOAD (System of a Down), Daft Punk, Pilot(si no lo conoces, la cancion mas conocida es Magic) 
+                   entre otros. También disfruto mucho de la música electrónica y los clásicos. Estudio en la UTN FRGP
+                   Tecnicatura Universitaria en Programación.
+                </p>
+                <img src="{% static 'appproject/assets/img/foto_de_perfil.png' %}" alt="Foto de perfil" class="imagen-redonda">
+
+
+
+                   <h3>Sobre mi proyecto</h3>
+                   <p>Lo que me propuse a hacer es un blog sobre los artistas que van a estar en el knotfest de este año
+                    Me pareció muy buena idea ya que vienen 4 artistas internacionales que son muy conocidos mundialmente
+                    que son Slipknot, Amon Amarth, Meshuggah, Babymetal. La cual voy a hacer un blog sobre este tema, que 
+                    voy a proporcionar datos sobre quienes son, su alineacion en el Knotfest, entre otros.
+                   </p>
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

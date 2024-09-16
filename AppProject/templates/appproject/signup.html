@@ -1,0 +1,14 @@
+{% extends 'appproject/padre.html' %}
+
+{% block title %}Registro{% endblock %}
+
+{% block ContenidoQueCambia %}
+    <div class="container">
+        <h2>Crear cuenta</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Registrarse</button>
+        </form>
+    </div>
+{% endblock %}

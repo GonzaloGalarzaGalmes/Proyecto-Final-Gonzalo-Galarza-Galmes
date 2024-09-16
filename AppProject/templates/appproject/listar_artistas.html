@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Artistas</title>
+</head>
+<body>
+    <h1>Lista de Artistas</h1>
+    
+    <a href="{% url 'inicio' %}" style="display: inline-block; padding: 10px 20px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px;">Inicio</a>
+    <ul>
+        {% for artista in artistas %}
+            <li>
+                {{ artista.nombre }} - {{ artista.genero }}
+                <a href="{% url 'actualizar_artista' artista.id %}">Actualizar</a>
+                <a href="{% url 'eliminar_artista' artista.id %}">Eliminar</a>
+            </li>
+        {% empty %}
+            <li>No hay artistas registrados.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'crear_artista' %}">Agregar Nuevo Artista</a>
+</body>
+</html>

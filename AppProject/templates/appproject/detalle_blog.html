@@ -1,0 +1,17 @@
+{% extends 'appproject/padre.html' %}
+
+{% block title %}Detalles del Blog{% endblock %}
+
+{% block ContenidoQueCambia %}
+    <div class="container">
+        <h2>{{ blog.titulo }}</h2>
+        <h3>{{ blog.subtitulo }}</h3>
+        <p>{{ blog.cuerpo }}</p>
+        <p><strong>Autor:</strong> {{ blog.autor }}</p>
+        <p><strong>Fecha:</strong> {{ blog.fecha }}</p>
+        {% if blog.imagen %}
+            <img src="{{ blog.imagen.url }}" alt="{{ blog.titulo }}" style="max-width: 100%;">
+        {% endif %}
+        <a href="{% url 'lista_blogs' %}" class="btn btn-secondary">Volver</a>
+    </div>
+{% endblock %}

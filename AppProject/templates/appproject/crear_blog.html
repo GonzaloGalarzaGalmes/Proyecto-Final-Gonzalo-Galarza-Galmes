@@ -1,0 +1,14 @@
+{% extends 'appproject/padre.html' %}
+
+{% block title %}Crear Blog{% endblock %}
+
+{% block ContenidoQueCambia %}
+    <div class="container">
+        <h2>Crear Blog</h2>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'appproject/padre.html' %}
+
+{% block title %}Iniciar sesión{% endblock %}
+
+{% block ContenidoQueCambia %}
+    <div class="container">
+        <h2>Iniciar sesión</h2>
+        {% if msg_login %}
+            <p class="text-danger">{{ msg_login }}</p>
+        {% endif %}
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+        </form>
+    </div>
+{% endblock %}
